@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -28,9 +28,6 @@ html, body {
   font-size: 100%;
   line-height: 1;
   font-size: 16px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 input, button, textarea {
@@ -46,7 +43,7 @@ button {
 }
 
 button:-moz-focus-inner {
-  padding: o;
+  padding: 0;
   border: 0;
 }
 
@@ -67,3 +64,107 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 6% 0 0 0;
+  margin: 0;
+  background-color: gray;
+}
+
+
+.slider__img {
+width: 100%;
+max-width: 500px;
+border-radius: 30px;
+height: 100%;
+}
+
+.slider__line{
+  display: flex;
+  align-items: center;
+  transition: all 1s;
+  margin-bottom: 20px;
+  max-height: 400px;
+  height: 100%;
+}
+
+.slider{
+  max-width: 500px;
+  overflow: hidden;
+  margin: 0 20px;
+
+}
+
+.slider__dot{
+  border-radius: 20px;
+  border: 2px solid rgb(100, 100, 251);
+  background-color: rgb(100, 100, 251);
+  width: 16px;
+  height: 16px;
+}
+
+.slider__wrapper{
+  display: flex;
+  column-gap: 10px;
+  bottom: 5%;
+  right:0;
+  margin-bottom: 20px;
+}
+
+.slider__dot:hover{
+  border: 2px solid #FFFF;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.active-dot{
+  background-color: inherit;
+}
+
+@media (max-width: 850px) {
+
+  .slider__dot {
+      width: calc(10px + (16 - 10) * ((100vw - 320px) / (850 - 320)));
+      height: calc(10px + (16 - 10) * ((100vw - 320px) / (850 - 320)));
+  }
+
+  .slider__wrapper{
+      column-gap: calc(5px + (10 - 5) * ((100vw - 320px) / (850 - 320)));
+  }
+}
+
+@media (max-width: 450px) {
+
+  .slider__wrapper{
+    transform: translateX(45%);
+  }
+}
+
+
+.slider__line2{
+  display: flex;
+  align-items: center;
+  transition: all 1s;
+  margin-bottom: 20px;
+  max-height: 400px;
+  height: 100%;
+  position: relative;
+}
+.text{
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #FFFF;
+  font-size: 19px;
+}
+
+.text-active{
+  visibility: visible;
+  opacity: 1;
+}
