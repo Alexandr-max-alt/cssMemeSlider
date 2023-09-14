@@ -1,4 +1,5 @@
 'use strict'
+
 const sliderImages = document.querySelectorAll('.slider__img'),
     sliderLine = document.querySelector('.slider__line'),
     sliderDots = document.querySelectorAll('.slider__dot');
@@ -12,7 +13,6 @@ function showSlide() {
     sliderWidth = document.querySelector('.slider').offsetWidth; 
     sliderLine.style.width = sliderWidth * sliderImages.length + 'px';
     sliderImages.forEach(item => item.style.width = sliderWidth + 'px');
-
     rollSlide()
 }
 showSlide()
@@ -22,7 +22,6 @@ function prevSlide() {
     if (sliderCount < 0) {
         sliderCount = sliderImages.length-1
     }
-
     rollSlide()
 }
 
@@ -31,7 +30,6 @@ function nextSlide() {
     if (sliderCount >= sliderImages.length) {
         sliderCount = 0
     }
-
     rollSlide()
 }
 
